@@ -13,8 +13,14 @@ export const SearchForm = () => {
 
   return (
     <div>
-      <label>名前
-        <input type="text" placeholder='名前を入力してください' onChange={onChange} value={firstName} />
+      <label>
+        名前
+        <input
+          type="text"
+          placeholder="名前を入力してください"
+          onChange={onChange}
+          value={firstName}
+        />
       </label>
       <button onClick={onClick}>検索</button>
     </div>

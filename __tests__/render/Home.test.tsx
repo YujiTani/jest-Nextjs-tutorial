@@ -8,14 +8,14 @@ describe('rendering', () => {
   });
 
   // 落ちるはずのテスト
-//   it('ラベルがemailのinputがあるかどうかテスト', () => {
-//     render(<Home />);
-//     expect(screen.getByLabelText('email')).toBeInTheDocument();
-//   });
+  //   it('ラベルがemailのinputがあるかどうかテスト', () => {
+  //     render(<Home />);
+  //     expect(screen.getByLabelText('email')).toBeInTheDocument();
+  //   });
 
   it('HomeコンポーネントにSerchFormコンポーネントがレンダーされている', () => {
     render(<Home />);
     expect(screen.getByText('名前')).toBeInTheDocument();
-    expect(screen.getByRole("button")).toBeTruthy();
+    expect(screen.getByRole('button')).toBeTruthy();
   });
 });
