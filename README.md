@@ -1,29 +1,31 @@
-# Next.js + Jest
+# Next.js + Jest + typescript
 
-This example shows how to configure Jest to work with Next.js.
+appの作成は下記コマンド
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript.
+Next v12以降からは
+with-jestの例で使用すると、JestとReact Testing Libraryをすぐに使い始めることができます。
 
-## How to Use
-
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
-
-In your terminal, run the following command:
-
-```bash
-npx create-next-app --example with-jest with-jest-app
+```jsx
+npx create-next-app@latest  --typescript --example with-jest with-jest-app
 ```
 
-```bash
-yarn create next-app --example with-jest with-jest-app
+[Github](https://github.com/vercel/next.js/tree/canary/examples/with-jest) この構成を確認する
+
+## Jestの設定 (Rustコンパイラを使用)
+
+Next.js 12以降、Next.jsにはJestのための設定が組み込まれています。
+
+Jestをセットアップするには、jest, jest-environment-jsdom, @testing-library/react, @testing-library/jest-dom をインストールしてください。
+
+```jsx
+yarn add -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
 ```
 
-```bash
-pnpm create next-app --example with-jest with-jest-app
+### package.jsonにtest scriptを追加
+
+```jsx
+"test": "jest --watch",
+"test:ci": "jest --ci"
 ```
 
-## Run Jest Tests
-
-```bash
-npm test
-```
+[jest ci の使い方](https://jestjs.io/ja/docs/cli)
