@@ -1,22 +1,21 @@
-import Home from "src/pages/Home";
-import { render, screen } from "@testing-library/react";
-
+import { render, screen } from '@testing-library/react';
+import { Home } from '@/pages/index';
 
 describe('rendering', () => {
-    it('HomeコンポーネントにHello worldと表示されるかテスト', () => {
-        render(<Home />)
-        expect(screen.getByText('Hello World')).toBeInTheDocument()
-    })
+  it('HomeコンポーネントにHello worldと表示されている', () => {
+    render(<Home />);
+    expect(screen.getByText('Hello World')).toBeInTheDocument();
+  });
 
-    it('ラベルがnameのinputがあるかどうかテスト', () => {
-        render(<Home />)
-        expect(screen.getByLabelText('name')).toBeInTheDocument()
-    })
+  // 落ちるはずのテスト
+//   it('ラベルがemailのinputがあるかどうかテスト', () => {
+//     render(<Home />);
+//     expect(screen.getByLabelText('email')).toBeInTheDocument();
+//   });
 
-
-    // 落ちるはずのテスト
-    // it('ラベルがemailのinputがあるかどうかテスト', () => {
-    //     render(<Home />)
-    //     expect(screen.getByLabelText('email')).toBeInTheDocument()
-    // })
-})
+  it('HomeコンポーネントにSerchFormコンポーネントがレンダーされている', () => {
+    render(<Home />);
+    expect(screen.getByText('名前')).toBeInTheDocument();
+    expect(screen.getByRole("button")).toBeTruthy();
+  });
+});
